@@ -18,7 +18,7 @@ Test.c          //- 소스코드
 04. d = define                 e.g. d_Data
 05. e = enum Type              e.g. e_Data
 06. f = Function               e.g. f_Data
-07. g = global variable        e.g. gv_Data
+07. g = source global          e.g. gv_Data, ga_Data ...
 08. i = Inline                 e.g. i_Data
 09. l = local variable         e.g. lv_Data
 10. m = enum member            e.g. m_Data
@@ -27,6 +27,7 @@ Test.c          //- 소스코드
 13. t = typedef                e.g. t_Data
 14. u = Union                  e.g. u_Data
 15. v = variable               e.g. v_Data
+16. x = Extern                 e.g. xv_Data
 **************************************************************************************************/
 #ifndef _TEST_TYPE_H_
 #define _TEST_TYPE_H_
@@ -59,7 +60,7 @@ Typedef struct
 04. d = define                 e.g. d_Data
 05. e = enum Type              e.g. e_Data
 06. f = Function               e.g. f_Data
-07. g = global variable        e.g. gv_Data
+07. g = source global          e.g. gv_Data, ga_Data...
 08. i = Inline                 e.g. i_Data
 09. l = local variable         e.g. lv_Data
 10. m = enum member            e.g. m_Data
