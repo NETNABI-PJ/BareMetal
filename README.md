@@ -12,3 +12,48 @@ f_App_Module(void);  //-
 1. CTable (Control Table)
 
 2. STable (Scheduler Table)
+
+동작 단위  
+#Module    
+- Camera   
+- LCD  
+  
+#JOB  
+  - 동작에 대한 테이블 변수로 존재 (함수는 없음)  
+  - JOB_CAMERA_COLOR : 컬러로 동작  
+  - JOB_CAMERA_BlackWhite : 흑백모드  
+    ```   
+    void (*gap_JOB_Camera_Color[]) (void) = {  
+        f_Task_Camera_Enable,  
+        f_Task_Camera_Disable,  
+        f_Task_Camera_Init,  
+        f_Task_Camera_Setup  
+    }
+    ```    
+#TASK  
+  - 한가지 동작을 정이  
+  - 창문열기 동작.  
+    case1. 모터를 정방향으로 가속.  
+    case2. 모터 현재 위치 파악.  
+    case3. 목표 확인.  
+  - 창문닫기 동작.
+  
+#CASE  
+  각 부분을 세분화 하여 Switch 문의 Case로 구분  
+  동작을 깔끔하게 보기 위해 함수를 호출 방식으로 권장  
+  Case 값을 step으로 지칭  
+  ```  
+  Switch(step)  
+  {  
+      case 0:  
+          f_Camera_EN_L();   
+          break;   
+      case 1:  
+          f_Camera_EN_H();  
+          break;  
+      default:   
+          break;   
+  }  
+  ```  
+  
+    
