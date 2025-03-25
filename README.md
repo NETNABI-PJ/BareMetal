@@ -22,7 +22,7 @@ f_App_Module(void);  //-
   - 동작에 대한 테이블 변수로 존재 (함수는 없음)  
   - JOB_CAMERA_COLOR : 컬러로 동작 테이블  
   - JOB_CAMERA_BlackWhite : 흑백모드 테이블  
-    ```ruby  
+    ```c  
     void (*gap_JOB_Camera_Color[]) (void) = {  
         f_Task_Camera_Enable,  
         f_Task_Camera_Disable,  
@@ -42,7 +42,7 @@ f_App_Module(void);  //-
   각 부분을 세분화 하여 Switch 문의 Case로 구분  
   동작을 깔끔하게 보기 위해 함수를 호출 방식으로 권장  
   Case 값을 step으로 지칭  
-  ```ruby  
+  ```c  
   Switch(step)  
   {  
       case 0:  
