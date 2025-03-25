@@ -13,7 +13,7 @@ f_App_Module(void);  //-
 
 2. STable (Scheduler Table)
 
-동작 단위  
+# 동작 단위 정의   
 #Module    
 - Camera   
 - LCD  
