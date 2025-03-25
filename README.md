@@ -38,7 +38,6 @@ f_App_Module(void);  //-
     case3. 목표 확인.  
   - 창문닫기 동작.
   
-#CASE  
   각 부분을 세분화 하여 Switch 문의 Case로 구분  
   동작을 깔끔하게 보기 위해 함수를 호출 방식으로 권장  
   Case 값을 step으로 지칭  
@@ -46,14 +45,20 @@ f_App_Module(void);  //-
   Switch(step)  
   {  
       case 0:  
-          f_Camera_EN_L();   
+          f_Camera_Work_EN_L();   
           break;   
       case 1:  
-          f_Camera_EN_H();  
+          f_Camera_Work_EN_H();  
           break;  
       default:   
           break;   
   }  
-  ```  
+  ```
+#WORK  
+  - 단순 동작 수행 합니다.  
+  - f_WindowOpen_Motor_Work_ON() 창문열기 모터 ON  
+  - f_WindowsOpen_Motor_Work_Off() 창문열기 모터 OFF  
+  - f_WindowsOpen_Moter_Work_Postion_Check() 창문위치 확인
+    
   
     
