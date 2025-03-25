@@ -20,8 +20,8 @@ f_App_Module(void);  //-
   
 #JOB  
   - 동작에 대한 테이블 변수로 존재 (함수는 없음)  
-  - JOB_CAMERA_COLOR : 컬러로 동작  
-  - JOB_CAMERA_BlackWhite : 흑백모드  
+  - JOB_CAMERA_COLOR : 컬러로 동작 테이블  
+  - JOB_CAMERA_BlackWhite : 흑백모드 테이블  
     ```ruby  
     void (*gap_JOB_Camera_Color[]) (void) = {  
         f_Task_Camera_Enable,  
