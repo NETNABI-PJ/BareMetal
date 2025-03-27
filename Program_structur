@@ -10,9 +10,14 @@ Task 함수 작성
 
 
 테이블 관리 구조체(Struct)
-p_Talbe_List_Pointer,  /// 테이블 포인터  
-v_Table_List_Size,     /// 테이블 사이즈
-v_Table_Position,      /// 테이블 위치
-e_Table_State,         /// 테이블 상태
-
+typedef struct ts_Table_Ctrl
+{
+    p_Talbe_List_Pointer,  /// 테이블 포인터  
+    v_Table_List_Size,     /// 테이블 사이즈
+    v_Table_Position,      /// 테이블 위치
+    e_Table_State,         /// 테이블 상태
+}
+구조체 종류
+ts_Table_Ctrl s_Job_Table_Ctrl;
+ts_Table_Ctrl s_Task_Table_ctrl;
 
