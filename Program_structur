@@ -1,0 +1,10 @@
+프로그램 단위 
+Job > Stage
+Task 함수 작성
+함수 내부는 2가지 종류료 나눠짐.
+1. 내부 Switch 단계적 수행. (작업이 시간차 간격으로 동작시켜야 할때)
+2. 단일 수행.
+함수 종류.
+1. 함수 수행시작 (Read Command Send)
+2. 함수 수행결과 (Read Conname Recv)
+
