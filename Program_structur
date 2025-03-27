@@ -8,3 +8,11 @@ Task 함수 작성
 1. 함수 수행시작 (Read Command Send)
 2. 함수 수행결과 (Read Conname Recv)
 
+
+테이블 관리 구조체(Struct)
+p_Talbe_List_Pointer,  /// 테이블 포인터  
+v_Table_List_Size,     /// 테이블 사이즈
+v_Table_Position,      /// 테이블 위치
+e_Table_State,         /// 테이블 상태
+
+
