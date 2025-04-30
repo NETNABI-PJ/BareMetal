@@ -29,7 +29,7 @@ typedef  enum
   m_TEST_BASE2
 }te_Test_Base;
 
-typdef struct
+typedef struct
 {
   te_Test_Base e_test_Base;
   ts_Test_Base s_test_base;
