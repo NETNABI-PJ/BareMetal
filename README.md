@@ -3,6 +3,41 @@
 플래시 16K 메모리가 8K 들은 RTOS를 올리고 구현한 수 있는 자원이
 많이 부족하기 때문에 BareMetal 방식으로 사용 합니다.
 
+# 코딩 문법 
+카멜 케이스(camel Case) + 스네이크 케이스(snake_case) 혼합 사용  
+하이브리드 케이스(Hybrid case)  
+```c
+nn_camera.c 인 경우 코드 내부 말머리는 다음과 같이 작성합니다.
+f_NN_Camera_xxx;
+v_NN_Camera_xxx;
+이는 함수의 소스파일 이름을 바로 파악 및 이름 충돌을 피함.
+네이밍 방법은 f_파일이름_대분류_소분류 -> f_NN_Camera_Reset_Get, Set
+f_NN_Camera_ReadSend();
+f_NN_Camera_WriteSend();
+```
+# 코드 접두사 사용 
+코드를 한눈에 파악하기 위해 다음과 같이 선언 합니다. 
+```c
+/***************************************************
+01.　 a = array variable　　　　　　e.g. a_Data[]
+02.　 b = bit fields　　　　　　　　 e.g. b_Data
+03.　 c = const　　　　　　　　　　　e.g, c_Data
+04.　 d = define　　　　　　　　　　 e.g. d_Data
+05.　 e = enum Type　　　　　　　　 e.g. e_Data
+06.　 f = Function　　　　　　　　　e.g. f_Data
+07.　 g = file global　　　　　　　 e.g. gv_Data (Extern)
+08.　 i = Inline　　　　　　　　　　e.g. i_Data
+09.　 l = local static variable　　e.g. lv_Data (static)
+10.　 m = enum member　　　　　　 　e.g. m_Data
+11.　 p = Pointer　　　　　　　　 　e.g. p_Data 
+12.　 s = struct　　　　　　　　　　 e.g. s_Data 
+13.　 t = typedef　　　　　　　　　　e.g. t_Data 
+14.　 u = Union　　　　　　　　　　　e.g. u_Data 
+15.　 v = variable　　　　　　　　　 e.g. v_Data 
+*************************************************/
+e.g. ga, gb, gc, ge, 
+
+```
 기본 코드 구조
 nn_app.c
 f_App_Init(void);    //- 초기화
