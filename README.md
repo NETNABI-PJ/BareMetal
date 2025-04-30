@@ -7,16 +7,87 @@
 
 # 코딩 문법 
 카멜 케이스(camel Case) + 스네이크 케이스(snake_case) 혼합 사용  
-하이브리드 케이스(Hybrid case)  
+하이브리드 케이스(Hybrid case)   
+
+기본 파일 구성은 다음과 같습니다.  
+test_type.h  (순수 Define 또는 타입만 선언)
 ```c
-nn_camera.c 인 경우 코드 내부 말머리는 다음과 같이 작성합니다.
-f_NN_Camera_xxx;
-v_NN_Camera_xxx;
-이는 함수의 소스파일 이름을 바로 파악 및 이름 충돌을 피함.
-네이밍 방법은 f_파일이름_대분류_소분류 -> f_NN_Camera_Reset_Get, Set
-f_NN_Camera_ReadSend();
-f_NN_Camera_WriteSend();
+
+#ifndef TEST_TYPE_H_
+#define TEST_TYPE_H_
+
+#define d_TEST_SETUP   0
+typedef struct
+{
+  uint32 v_Data1;
+  sint32 v_Data2;
+}ts_Test_Base;
+
+typedef  enum
+{
+  m_TEST_BASE1,
+  m_TEST_BASE2
+}te_Test_Base;
+
+typdef struct
+{
+  te_Test_Base e_test_Base;
+  ts_Test_Base s_test_base;
+}ts_Test_Ctrol;
+
+#endif
 ```
+test_type.h ( 다른소스 타입을 사용시에 선언)
+```c
+#ifndef TSET_H_
+#define TEST_H_
+
+#include "camera_type.h" /// 또는 Camera.h 함수 사용시 
+#include "test_type.h"
+
+typedef struct
+{
+  ts_Camera_base s_Camera_base;
+  ts_Test_bsase s_Test_base;
+}ts_Test_Moulde;
+
+#endif
+```
+test_type.c
+```c
+#include "test.h"
+
+uint32 xv_Test_Flag;          /// extren 변수
+uint32 xa_Test_Array[29];     /// extren 배열 변수
+
+static uint32 gv_Test_Timer;  /// 소스파일 범위 변수
+static uint32 gv_Test_State;  /// 소스파일 범위 변수
+
+static sint32* gp_Test_Point;         /// 소스파일 범위 포인터 변수
+static sint32* gpa_Test_Array[20];    /// 소스파일 범위 포인터 배열 변수
+
+void f_Test_Int(void)
+{
+  static uint32 lv_Time;  /// 함수 내부는 파일명 접두사를 넣을 필요 없음.
+  uint32 v_Buff;
+{
+void f_Test_Module(void)
+{
+}
+
+```
+
+nn_camera.c 인 경우 코드 내부 말머리는 다음과 같이 작성합니다.  
+f_NN_Camera_xxx;  
+v_NN_Camera_xxx;  
+이는 함수의 소스파일 이름을 바로 파악 및 이름 충돌을 피함.  
+네이밍 방법은 f_파일이름_대분류_소분류 -> f_NN_Camera_Reset_Get, Set  
+f_NN_Camera_ReadSend();  
+f_NN_Camera_WriteSend();  
+  
+추가로 Extren은 원소스 헤더파일에서만 사용 다른 코드에서 사용 불가.  
+이는 스파게티 방지.  다른 소스코드 에서 사용 하려면 헤더파일 인클루드  
+  
 # 코드 접두사 사용 
 코드를 한눈에 파악하기 위해 다음과 같이 선언 합니다. 
 ```c
@@ -38,7 +109,12 @@ f_NN_Camera_WriteSend();
 15.　 v = variable　　　　　　　　　 e.g. v_Data
 16.   x = extern                   e.g. xv_data (File간 변수)
 *************************************************/
-e.g. ga, gb, gc, ge, 
+e.g. ga, gb, gc, ge,
+
+test.h
+extren xv_Flag;
+
+test.c
 
 ```
 기본 코드 구조
