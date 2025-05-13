@@ -1,3 +1,8 @@
+# 활동링크
+유튜브 : https://www.youtube.com/@NETNABI  
+reddit : https://www.reddit.com/r/netnabi  
+NaverCafe : https://cafe.naver.com/netnabi  
+
 # BareMetal
 유튜브에 있는 영상들은 전부 Bare Metal 기반으로 구현되었습니다.  
 플래시 16K 메모리가 8K 들은 RTOS를 올리고 구현한 수 있는 자원이  
