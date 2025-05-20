@@ -97,22 +97,22 @@ f_NN_Camera_WriteSend();
 코드를 한눈에 파악하기 위해 다음과 같이 선언 합니다. 
 ```c
 /***************************************************
-01.　 a = array variable　　　　　　e.g. a_Data[]
-02.　 b = bit fields　　　　　　　　 e.g. b_Data
-03.　 c = const　　　　　　　　　　　e.g, c_Data
-04.　 d = define　　　　　　　　　　 e.g. d_Data
-05.　 e = enum Type　　　　　　　　 e.g. e_Data
-06.　 f = Function　　　　　　　　　e.g. f_Data
-07.　 g = file global　　　　　　　 e.g. gv_Data (파일내 Static 변수)
-08.　 i = Inline　　　　　　　　　　e.g. i_Data
-09.　 l = local static variable　　e.g. lv_Data (함수내 Static 변수
-10.　 m = enum member　　　　　　 　e.g. m_Data
-11.　 p = Pointer　　　　　　　　 　e.g. p_Data 
-12.　 s = struct　　　　　　　　　　 e.g. s_Data 
-13.　 t = typedef　　　　　　　　　　e.g. t_Data 
-14.　 u = Union　　　　　　　　　　　e.g. u_Data 
-15.　 v = variable　　　　　　　　　 e.g. v_Data
-16.   x = extern                   e.g. xv_data (File간 변수)
+01. a = array variable                      e.g. a_Data[]
+02. b = bit fields                          e.g. b_Data
+03. c = const                               e.g, c_Data
+04. d = define                              e.g. d_Data
+05. e = enum Type                           e.g. e_Data
+06. f = Function                            e.g. f_Data
+07. g = Source file static variable         e.g. gv_Data
+08. i = Inline                              e.g. i_Data
+09. l = Static variables inside functions   e.g. lv_Data
+10. m = enum member                         e.g. m_Data
+11. p = Pointer                             e.g. p_Data 
+12. s = struct                              e.g. s_Data 
+13. t = typedef                             e.g. t_Data 
+14. u = Union                               e.g. u_Data 
+15. v = variable                            e.g. v_Data
+16. x = extern                              e.g. xv_data
 *************************************************/
 e.g. ga, gb, gc, ge,
 
