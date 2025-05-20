@@ -93,10 +93,20 @@ f_NN_Camera_WriteSend();
 추가로 Extren은 원소스 헤더파일에서만 사용 다른 코드에서 사용 불가.  
 이는 스파게티 방지.  다른 소스코드 에서 사용 하려면 헤더파일 인클루드  
   
-# 코드 접두사 사용 
+# 파일 주석 및 코드 접두사 사용 
 코드를 한눈에 파악하기 위해 다음과 같이 선언 합니다. 
 ```c
 /******************************************************************************
+* File:    ats_schedluer.c
+* Author:  NETNABI
+* Created: 2024-11-10
+*
+* Description:
+* This is the scheduler manager module.
+*
+* Revision History:
+*   2025-05-21  MK  New project.
+-------------------------------------------------------------------------------
 01. a = array variable                      e.g. a_Data[]
 02. b = bit fields                          e.g. b_Data
 03. c = const                               e.g, c_Data
