@@ -83,12 +83,14 @@ void f_Test_Module(void)
 ```
 
 nn_camera.c 인 경우 코드 내부 말머리는 다음과 같이 작성합니다.  
-f_NN_Camera_xxx;  
-v_NN_Camera_xxx;  
+f_Pbot_Camera_xxx;  
+v_Pbot_Camera_xxx;  
 이는 함수의 소스파일 이름을 바로 파악 및 이름 충돌을 피함.  
-네이밍 방법은 f_파일이름_대분류_소분류 -> f_NN_Camera_Reset_Get, Set  
-f_NN_Camera_ReadSend();  
-f_NN_Camera_WriteSend();  
+네이밍 방법은 f_파일이름_대분류_소분류  
+파일이름 + 대분류는 다음과 같이 _를 제거 해서 사용
+하위집단은 _로 구분.
+f_PbotCamera_Read_Send();  
+f_PbotCamera_Write_Send();  
   
 추가로 Extren은 원소스 헤더파일에서만 사용 다른 코드에서 사용 불가.  
 이는 스파게티 방지.  다른 소스코드 에서 사용 하려면 헤더파일 인클루드  
@@ -133,9 +135,9 @@ test.c
 
 ```
 기본 코드 구조
-nn_app.c
-f_App_Init(void);    //- 초기화
-f_App_Module(void);  //- 
+Pbot_app.c
+f_PbotApp_Init(void);    //- 초기화
+f_PBotApp_Module(void);  //- 
 
 
 1. CTable (Control Table)
