@@ -12,7 +12,7 @@ NaverCafe : https://cafe.naver.com/netnabi
 
 # 코딩 문법 
 파스칼케이스 (Pascal Case) + 스네이크 케이스(snake_case) 혼합 사용  
-PS 케이스(PS case)   
+PS 케이스(PS_Case)   
 
 기본 파일 구성은 다음과 같습니다.  
 test_type.h  (순수 Define 또는 타입만 선언)
