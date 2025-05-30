@@ -15,13 +15,14 @@ NaverCafe : https://cafe.naver.com/netnabi
 PS 케이스(PS_Case)   
 
 기본 파일 구성은 다음과 같습니다.  
-test_type.h  (순수 Define 또는 타입만 선언)
+base_uart_type.h  (순수 Define 또는 타입만 선언)  
 ```c
 
 #ifndef TEST_TYPE_H_
 #define TEST_TYPE_H_
 
 #define d_TEST_SETUP   0
+/// 외부를 참조할경우 base_uart.h에서 선언  
 typedef struct
 {
   uint32 v_Data1;
@@ -58,23 +59,27 @@ typedef struct
 
 #endif
 ```
-test_type.c
+base_uart.c
 ```c
-#include "test.h"
+#include "uart.h"
 
-uint32 xv_Test_Flag;          /// extren 변수
-uint32 xa_Test_Array[29];     /// extren 배열 변수
+/// 이름 규칙 : 외부 선언시 C 파일이름 을 접두사로 사용
+/// 소스파일 규칙 {프로젝트명}_{기능}.c 예시) v_Base_Uart_Len  
+uint32 xv_base_uart1_flag;     /// extern 전역변수 경우 소스파일을 접두어로 사용하여 출처를 알림   
+uint32 xv_base_uart2_flag;     /// extern 전역변수 _소문자 사용    
+uint32 xv_base_uart3_allClean  /// extern 븉어서 쓸경우 중간에 구분은 대분자로 표현  
+uint32 xa_test_array[29];      /// extren 배열 변수  
 
-static uint32 gv_Test_Timer;  /// 소스파일 범위 변수
-static uint32 gv_Test_State;  /// 소스파일 범위 변수
-
-static sint32* gp_Test_Point;         /// 소스파일 범위 포인터 변수
-static sint32* gpa_Test_Array[20];    /// 소스파일 범위 포인터 배열 변수
-
+static uint32 gv_timer;        /// static 소스파일 범위 변수  {프로젝트명},{기능} 은 생략 할수 있다.  
+static uint32 gv_state;        /// static 소스파일 범위 변수  
+static sint32* gp_test_point;         /// 소스파일 범위 포인터 변수  
+static sint32* gpa_test_array[20];    /// 소스파일 범위 포인터 배열 변수  
+static struct_test gs_test;           /// 소스파일 범위 구조체.  
+/// 함수는 _첫글자 대문자로 표현  
 void f_Test_Int(void)
 {
-  static uint32 lv_Time;  /// 함수 내부는 파일명 접두사를 넣을 필요 없음.
-  uint32 v_Buff;
+  static uint32 lv_Time;  /// 함수 내 static경우 local 의 의미로 lv_접두어를 사용.
+  uint32 v_Buff;          /// {프로젝트명}_{기능} 생략 함수내에만 적용 되므로 불필요
 {
 void f_Test_Module(void)
 {
