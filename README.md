@@ -11,8 +11,10 @@ NaverCafe : https://cafe.naver.com/netnabi
 실시간 업데이트가 되며 프로젝트 및 개발을 하면서 보완할 생각 입니다.  
 
 # 코딩 문법 
-파스칼케이스 (Pascal Case) + 스네이크 케이스(snake_case) 혼합 사용  
-PS 케이스(PS_Case)   
+파스칼케이스 (Pascal Case) 
+스네이크 케이스(snake_case) 
+카멜 케이스 (camelCase)  
+혼합 사용 PSC case 로 정의  
 
 기본 파일 구성은 다음과 같습니다.  
 base_uart_type.h  (순수 Define 또는 타입만 선언)  
@@ -62,6 +64,21 @@ typedef struct
 base_uart.c
 ```c
 #include "uart.h"
+
+/// 개발에 먼저 가독성 한번에 식별이 편하게 만들기 위해 규칙을 정함.  
+/// 기본적으로 이름만 보고 이게 어디에 생성 되며 무슨 타입인지 식별을 바로 하기위 작성.  
+
+/// 1. 첫번째 접두어는 항상 소문자.
+f_Function;   /// f: 함수
+e_enum;       /// e: enum 변수
+s_struct;     /// s: 구조체
+.... 등등 자세한 접두어는 아래 접두어 사용 항목 확인.
+
+/// 1. 대문자로만 작성 되어야 되는 타입 
+1.1 #define d_DEFINE 0    /// 정의
+1.2 const cv_PI;          /// 상수
+1.3 m_ERROR_TYPE;         /// enum 맴버
+1.4 AP, SW, FW ;          /// 약어는 대문자로 표기 변수던 뭐던간에
 
 /// 이름 규칙 : 외부 선언시 C 파일이름 을 접두사로 사용
 /// 소스파일 규칙 {프로젝트명}_{기능}.c 예시) v_Base_Uart_Len  
