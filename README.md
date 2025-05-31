@@ -27,8 +27,8 @@ base_uart_type.h  (순수 Define 또는 타입만 선언)
 /// 외부를 참조할경우 base_uart.h에서 선언  
 typedef struct
 {
-  uint32 v_Data1;
-  sint32 v_Data2;
+  uint32 v_data1;
+  sint32 v_data2;
 }ts_Test_Base;
 
 typedef  enum
@@ -39,7 +39,7 @@ typedef  enum
 
 typedef struct
 {
-  te_Test_Base e_test_Base;
+  te_Test_Base e_test_base;
   ts_Test_Base s_test_base;
 }ts_Test_Ctrol;
 
@@ -55,8 +55,8 @@ test_type.h ( 다른소스 타입을 사용시에 선언)
 
 typedef struct
 {
-  ts_Camera_base s_Camera_base;
-  ts_Test_bsase s_Test_base;
+  ts_Camera_base s_camera_base;
+  ts_Test_bsase s_tgest_base;
 }ts_Test_Moulde;
 
 #endif
@@ -72,7 +72,7 @@ base_uart.c
 f_Function;   /// f: 함수
 e_enum;       /// e: enum 변수
 s_struct;     /// s: 구조체
-.... 등등 자세한 접두어는 아래 접두어 사용 항목 확인.
+.... 등등 자세한 접두어는 아래 접두어 항목 확인.
 
 /// 1. 대문자로만 작성 되어야 되는 타입 
 1.1 #define d_DEFINE 0    /// 정의
@@ -80,15 +80,14 @@ s_struct;     /// s: 구조체
 1.3 m_ERROR_TYPE;         /// enum 맴버
 1.4 AP, SW, FW ;          /// 약어는 대문자로 표기 변수던 뭐던간에
 
-/// 이름 규칙 : 외부 선언시 C 파일이름 을 접두사로 사용
-/// 소스파일 규칙 {프로젝트명}_{기능}.c 예시) v_Base_Uart_Len  
-uint32 xv_base_uart1_flag;     /// extern 전역변수 경우 소스파일을 접두어로 사용하여 출처를 알림   
-uint32 xv_base_uart2_flag;     /// extern 전역변수 _소문자 사용    
-uint32 xv_base_uart3_allClean  /// extern 븉어서 쓸경우 중간에 구분은 대분자로 표현  
-uint32 xa_test_array[29];      /// extren 배열 변수  
+/// 외부 선언시 C 파일이름 을 접두사로 사용 {프로젝트명}_{기능}.c 예시) v_Base_Uart_Len  
+extern uint32 xv_base_uart1_flag;     /// extern 전역변수 경우 소스파일을 접두어로 사용하여 출처를 알림   
+extern uint32 xv_base_uart2_flag;     /// extern 전역변수 _소문자 사용    
+extern uint32 xv_base_uart3_allClean  /// extern 븉어서 쓸경우 중간에 구분은 대분자로 표현  
+extern uint32 xa_test_array[29];      /// extren 배열 변수  
 
-static uint32 gv_timer;        /// static 소스파일 범위 변수  {프로젝트명},{기능} 은 생략 할수 있다.  
-static uint32 gv_state;        /// static 소스파일 범위 변수  
+static uint32 gv_timer;               /// static 소스파일 범위 변수  {프로젝트명},{기능} 은 생략 할수 있다.  
+static uint32 gv_state;               /// static 소스파일 범위 변수  
 static sint32* gp_test_point;         /// 소스파일 범위 포인터 변수  
 static sint32* gpa_test_array[20];    /// 소스파일 범위 포인터 배열 변수  
 
