@@ -74,8 +74,11 @@ static uint32 gv_timer;        /// static 소스파일 범위 변수  {프로젝
 static uint32 gv_state;        /// static 소스파일 범위 변수  
 static sint32* gp_test_point;         /// 소스파일 범위 포인터 변수  
 static sint32* gpa_test_array[20];    /// 소스파일 범위 포인터 배열 변수  
-static struct_test gs_test;           /// 소스파일 범위 구조체.  
-/// 함수는 _첫글자 대문자로 표현  
+
+/// 함수 또는 Typdedef 문은 _마다 대문자로 표시  
+static ts_Uart_Buff_Ctrol  gs_uart1_buff_ctrol;           /// 소스파일 범위 구조체.  
+static te_Error_Typde ge_error_type;  
+
 void f_Test_Int(void)
 {
   static uint32 lv_Time;  /// 함수 내 static경우 local 의 의미로 lv_접두어를 사용.
