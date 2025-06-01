@@ -123,7 +123,7 @@ f_PbotCamera_Write_Send();
 코드를 한눈에 파악하기 위해 다음과 같이 선언 합니다. 
 ```c
 /******************************************************************************
-* File:    ats_schedluer.c
+* File:    base_schedluer.c
 * Author:  NETNABI
 * Created: 2024-11-10
 *
